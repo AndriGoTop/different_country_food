@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разные блюда стран|{{ articles.title }}</title>
+    <link rel="stylesheet" href="{% static 'articles/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'articles/slick-1.8.1/slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'articles/slick-1.8.1/slick/slick-theme.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'home' %}" id="logo-header">
+            <h1>Разные блюда стран</h1>
+        </a>
+    </header>
+    <section id="main">
+        <div class="container">
+            <h2 class="name-article name-article-page">{{ articles.title }}</h2>
+            <div id="container-article-page">
+                {% if pictures %}
+                    <div id="pic-block">
+                        {% for picture in pictures %}
+                        <img src="{% url 'home' %}media/{{ picture.picture }}">
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div id="text-block">
+                    <p class="content-article content-article-page">{{ articles.content }}</p>
+                </div>
+                {% if pictures %}
+                <div id="container-slider">
+                    <div class="slider">
+                        {% for picture in pictures %}
+                        <img src="{% url 'home' %}media/{{ picture.picture }}">
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+
+    <script src="{% static 'articles/js/code.jquery.com_jquery-3.7.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'articles/slick-1.8.1/slick/slick.min.js' %}"></script>
+    <script src="{% static 'articles/js/scripts.js' %}"></script>
+
+</body>
+
+</html>

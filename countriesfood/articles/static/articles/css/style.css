@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&display=swap');
+
+/* main */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e7e7e7;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+#container-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#container-article {
+    display: flex;
+    flex-direction: column;
+}
+
+#container-article-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* header */
+
+header {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-header {
+    text-decoration: none;
+    color: black;
+    font-family: 'Pacifico', cursive;
+    font-size: 16px;
+}
+
+/* nav */
+
+nav {
+    box-sizing: border-box;
+    background-color: white;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 15px;
+    float: left;
+}
+
+nav a {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+nav a:first-of-type {
+    margin: 0;
+}
+
+/* article-main-page */
+
+#main {
+    margin-top: 30px;
+}
+
+.article {
+    background-color: white;
+    height: 200px;
+    width: 1100px;
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.pic-article-prew {
+    height: 100%;
+    background: url(https://trip-advice.ru/wp-content/uploads/2019/11/chto-poprobovat-v-argentine-iz-edy-1.jpg) no-repeat center;
+    background-size: cover;
+    flex-grow: 1;
+    width: 300px;
+    border-radius: 15px 0 0 15px;
+
+}
+
+.info-article-prew {
+    flex-grow: 6;
+    width: 300px;
+    margin: 0 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+.name-article {
+    font-size: 32px;
+}
+
+.content-article {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.read-more {
+    text-decoration: none;
+    color: white;
+    background-color: #0075FF;
+    align-self: flex-end;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: ease 0.5s;
+}
+
+.read-more:hover {
+    text-decoration: none;
+    color: #0075FF;
+    background-color: white;
+    align-self: flex-end;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: ease 0.5s;
+}
+
+/* article page */
+
+#pic-block {
+    display: flex;
+    flex-direction: column;
+}
+
+#pic-block img {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+#text-block {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-left: 30px;
+}
+
+.name-article-page {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* mobile */
+
+#container-slider{
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.slider{
+    display: none;
+}
+
+@media (max-width: 1300px) {
+    #container-slider{
+        display: block;
+    }
+
+    #container-article {
+        width: 100%;
+    }
+
+    .article {
+        height: 400px;
+        width: 100%;
+        flex-flow: column nowrap;
+    }
+
+    .pic-article-prew{
+        width: 100%;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .info-article-prew{
+        width: auto;
+    }
+
+    .read-more {
+        text-decoration: none;
+        color: white;
+        background-color: #0075FF;
+        align-self: flex-end;
+        font-size: 20px;
+        border-radius: 5px;
+        transition: ease 0.5s;
+        width: 300px;
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    .read-more:hover {
+        text-decoration: none;
+        color: #0075FF;
+        background-color: white;
+        align-self: flex-end;
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        transition: ease 0.5s;
+    }
+
+    .name-article {
+        margin: 15px 0;
+    }
+    
+    .content-article {
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    #container-main{
+        flex-direction: column;
+    }
+    
+    nav{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    nav a{
+        margin: 0;
+    }
+
+    #pic-block {
+        display: none;
+    }
+
+    #text-block{
+        margin: 30px;
+    }
+    
+    .name-article-page{
+        margin: 0;
+    }
+
+    #container-article-page{
+        flex-direction: column;
+    }
+    
+    .slider{
+        display: block;
+    }
+
+    .slider div{
+        width: 100%;
+    }
+
+    .slider div img{
+        width: 100%;
+    }
+}

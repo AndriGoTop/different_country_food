@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разные блюда стран|{{ country.title }}</title>
+    <link rel="stylesheet" href="{% static 'articles/css/style.css' %}">
+</head>
+
+<body>
+<header>
+    <a href="{% url 'home' %}" id="logo-header">
+        <h1>Разные блюда стран</h1>
+    </a>
+</header>
+<section id="main">
+    <div class="container">
+        <div id="container-main">
+            <nav>
+                {% for country in countries %}
+                    <a href="{% url 'home' %}category/{{ country.pk }}">{{ country.title }}</a>
+                {% endfor %}
+            </nav>
+            <div id="container-article">
+                {% for article in articles %}
+                <div class="article">
+                    <div class="pic-article-prew" style="background-image: url('{% url 'home' %}media/{{ article.intro_picture }}');"></div>
+                    <div class="info-article-prew">
+                        <h2 class="name-article">{{ article.title }}</h2>
+                        <p class="content-article">{{ article.content|truncatewords:30 }}</p>
+                        <a href="{% url 'home' %}article/{{ article.pk }}" class="read-more">Подробнее</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
