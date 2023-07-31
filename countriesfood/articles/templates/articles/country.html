@@ -19,8 +19,12 @@
     <div class="container">
         <div id="container-main">
             <nav>
-                {% for country in countries %}
-                    <a href="{% url 'home' %}category/{{ country.pk }}">{{ country.title }}</a>
+                {% for countr in countries %}
+                    {% if country.pk == countr.pk %}
+                        <a href="{% url 'home' %}category/{{ countr.pk }}" style="color: red;">{{ countr.title }}</a>
+                    {% else %}
+                        <a href="{% url 'home' %}category/{{ countr.pk }}">{{ countr.title }}</a>
+                    {% endif %}
                 {% endfor %}
             </nav>
             <div id="container-article">
